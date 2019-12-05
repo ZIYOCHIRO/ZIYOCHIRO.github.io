@@ -242,6 +242,148 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ziyochiro.github.io/2019/12/05/Creating-a-Mac-version-of-Your-iPhone-App/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ziyochiro">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ziyochiro's Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/12/05/Creating-a-Mac-version-of-Your-iPhone-App/" itemprop="url">Creating a Mac version of Your iPhone App</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-05T17:36:40+08:00">
+                2019-12-05
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-05T17:36:40+08:00">
+                2019-12-05
+              </time>
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Link: <a href="https://developer.apple.com/mac-catalyst/" target="_blank" rel="noopener"></a><br>Requirements:</p>
+<ul>
+<li>Xcode11 and later</li>
+<li>MacOS 10.15 and later</li>
+</ul>
+<hr>
+<p>I have a simple iOS App that only have a viewController and a few buttons and lables on it. It looks like this:<br><a href="https://i.imgur.com/hx6lV1N.png" target="_blank" rel="noopener">Imgur</a><br>If you want to create a Mac version of it without changing any code, you can do this by using Mac-Catalyst. It’s fast and simple.</p>
+<p>#1. Pre-Setting<br>###Step1<br>Check the Mac option in Target Device.<br><a href="https://i.imgur.com/6nhG5qq.png" target="_blank" rel="noopener">Imgur</a><br>###Step2<br>Normally, the code can just run on you Mac fine, but you might encounter this situation that you cannot run the code on you Mac because you have to add some Mac’s architecture in the Build Setting.<br><a href="https://i.imgur.com/6lT650T.png" target="_blank" rel="noopener">Imgur</a><br>You can fix this by manually add ‘i386’ ‘x86_64’ to the Valid Architectures.<br><a href="https://i.imgur.com/ZF5fliq.png" target="_blank" rel="noopener">Imgur</a></p>
+<p>#2. Window settings<br>By default, you can change the window size, like many other Mac apps.<br><a href="https://i.imgur.com/2NBArN5.png" target="_blank" rel="noopener">Imgur</a><br><a href="https://i.imgur.com/sTvhdkh.png" target="_blank" rel="noopener">Imgur</a><br>Or you can fix the window size by adding the following code. Notice the difference between window and window scene.<br><a href="https://i.imgur.com/lwVLWaj.png" target="_blank" rel="noopener">Imgur</a><br>TARGET_OS_MACCATALYST allows you to exclude some code from Mac or iOS.</p>
+<figure class="highlight plain"><figcaption><span>c</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [super viewDidLoad];</span><br><span class="line">    self.view.backgroundColor = [UIColor whiteColor];</span><br><span class="line">    #if !TARGET_OS_MACCATALYST</span><br><span class="line">        NSLog(@“—codes only run on iPhone”);</span><br><span class="line">        // code here</span><br><span class="line">    #endif</span><br><span class="line">    </span><br><span class="line">    #if TARGET_OS_MACCATALYST</span><br><span class="line">        NSLog(@“—codes only run on Mac”);</span><br><span class="line">        // code here</span><br><span class="line">    #endif</span><br><span class="line">    </span><br><span class="line">    NSLog(@&quot;--run on both iPhone and Mac”);</span><br><span class="line">    // code here</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://ziyochiro.github.io/2019/11/22/deleterLater/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -584,7 +726,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
