@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="macos," />
 
 
 
@@ -79,13 +79,15 @@
 
 
 
-<meta name="description" content="My blogs">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ziyochiro&#39;s Blogs">
-<meta property="og:url" content="https:&#x2F;&#x2F;ziyochiro.github.io&#x2F;index.html">
+<meta name="description" content="Device Model12345678910111213141516- (NSString *)getDeviceModel &amp;#123;        size_t len = 0;        sysctlbyname(&quot;hw.model&quot;, NULL, &amp;amp;len, NULL, 0);        if (len)        &amp;#123;            char *m">
+<meta name="keywords" content="macos">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MacOS development: Get device and system information">
+<meta property="og:url" content="https:&#x2F;&#x2F;ziyochiro.github.io&#x2F;2019&#x2F;12&#x2F;13&#x2F;MacOS-development-Get-device-and-system-information&#x2F;index.html">
 <meta property="og:site_name" content="Ziyochiro&#39;s Blogs">
-<meta property="og:description" content="My blogs">
+<meta property="og:description" content="Device Model12345678910111213141516- (NSString *)getDeviceModel &amp;#123;        size_t len = 0;        sysctlbyname(&quot;hw.model&quot;, NULL, &amp;amp;len, NULL, 0);        if (len)        &amp;#123;            char *m">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-12-13T01:23:23.000Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -116,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://ziyochiro.github.io/"/>
+  <link rel="canonical" href="https://ziyochiro.github.io/2019/12/13/MacOS-development-Get-device-and-system-information/"/>
 
 
 
 
 
-  <title>Ziyochiro's Blogs</title>
+  <title>MacOS development: Get device and system information | Ziyochiro's Blogs</title>
   
 
 
@@ -141,8 +143,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -227,9 +228,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -259,9 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/13/MacOS-development-Get-device-and-system-information/" itemprop="url">MacOS development: Get device and system information</a></h1>
+          <h1 class="post-title" itemprop="name headline">MacOS development: Get device and system information</h1>
         
 
         <div class="post-meta">
@@ -345,9 +344,7 @@
       
 
       
-        
-          
-            <h1 id="Device-Model"><a href="#Device-Model" class="headerlink" title="Device Model"></a>Device Model</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">NSString</span> *)getDeviceModel &#123;</span><br><span class="line">        size_t len = <span class="number">0</span>;</span><br><span class="line">        sysctlbyname(<span class="string">"hw.model"</span>, <span class="type">NULL</span>, &amp;len, <span class="type">NULL</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (len)</span><br><span class="line">        &#123;</span><br><span class="line">            char *model = malloc(len*<span class="built_in">sizeof</span>(char));</span><br><span class="line">            sysctlbyname(<span class="string">"hw.model"</span>, model, &amp;len, <span class="type">NULL</span>, <span class="number">0</span>);</span><br><span class="line">            <span class="type">NSString</span> *model_ns = [<span class="type">NSString</span> stringWithUTF8String:model];</span><br><span class="line">            free(model);</span><br><span class="line">            <span class="keyword">return</span> model_ns;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> @<span class="string">"Just an Apple Computer"</span>; <span class="comment">//incase model name can't be read</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="Device-Model"><a href="#Device-Model" class="headerlink" title="Device Model"></a>Device Model</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">NSString</span> *)getDeviceModel &#123;</span><br><span class="line">        size_t len = <span class="number">0</span>;</span><br><span class="line">        sysctlbyname(<span class="string">"hw.model"</span>, <span class="type">NULL</span>, &amp;len, <span class="type">NULL</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (len)</span><br><span class="line">        &#123;</span><br><span class="line">            char *model = malloc(len*<span class="built_in">sizeof</span>(char));</span><br><span class="line">            sysctlbyname(<span class="string">"hw.model"</span>, model, &amp;len, <span class="type">NULL</span>, <span class="number">0</span>);</span><br><span class="line">            <span class="type">NSString</span> *model_ns = [<span class="type">NSString</span> stringWithUTF8String:model];</span><br><span class="line">            free(model);</span><br><span class="line">            <span class="keyword">return</span> model_ns;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> @<span class="string">"Just an Apple Computer"</span>; <span class="comment">//incase model name can't be read</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Output:</span><br><span class="line">Macbookpro13,<span class="number">1</span></span><br></pre></td></tr></table></figure>
 <h1 id="System-Version"><a href="#System-Version" class="headerlink" title="System Version"></a>System Version</h1><figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="type">NSString</span> *)getSystemVersion &#123;</span><br><span class="line">    <span class="type">NSOperatingSystemVersion</span> version = [[<span class="type">NSProcessInfo</span> processInfo] operatingSystemVersion];</span><br><span class="line">    <span class="type">NSString</span>* major = [<span class="type">NSString</span> stringWithFormat:@<span class="string">"%ld"</span>, (long)version.majorVersion];</span><br><span class="line">    <span class="type">NSString</span>* minor = [<span class="type">NSString</span> stringWithFormat:@<span class="string">"%ld"</span>, (long)version.minorVersion];</span><br><span class="line">    <span class="type">NSString</span>* patch = [<span class="type">NSString</span> stringWithFormat:@<span class="string">"%ld"</span>, (long)version.patchVersion];</span><br><span class="line">    <span class="keyword">return</span> [<span class="type">NSString</span> stringWithFormat:@<span class="string">"%@.%@.%@"</span>, major, minor, patch];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">Output:</span></span><br><span class="line"><span class="number">10.15</span><span class="number">.0</span></span><br></pre></td></tr></table></figure>
@@ -361,8 +358,6 @@
 <figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Output:</span><br><span class="line"><span class="number">70</span>A46D95<span class="number">-19</span>C4<span class="number">-41</span>AB-FS74-BC124EF15051  <span class="comment">// SOMETHING LIKE THIS</span></span><br></pre></td></tr></table></figure>
 
 
-          
-        
       
     </div>
     
@@ -374,505 +369,57 @@
     
 
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ziyochiro.github.io/2019/12/06/How-to-build-a-static-library/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ziyochiro">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ziyochiro's Blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/06/How-to-build-a-static-library/" itemprop="url">How to build a static library</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-06T18:29:48+08:00">
-                2019-12-06
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-06T18:29:48+08:00">
-                2019-12-06
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/objective-c/" itemprop="url" rel="index">
-                    <span itemprop="name">objective-c</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="Step-1-Start-with-a-new-project"><a href="#Step-1-Start-with-a-new-project" class="headerlink" title="Step 1 Start with a new project"></a>Step 1 Start with a new project</h1><h2 id="Create-a-new-project-choose-iOS-→-Static-Library-→-Next"><a href="#Create-a-new-project-choose-iOS-→-Static-Library-→-Next" class="headerlink" title="Create a new project, choose iOS → Static Library → Next."></a>Create a new project, choose iOS → Static Library → Next.</h2><p><img src="https://i.imgur.com/B3UINZj.png" alt="Imgur"></p>
-<h2 id="Enter-the-Product-Name-and-click-Next"><a href="#Enter-the-Product-Name-and-click-Next" class="headerlink" title="Enter the Product Name and click Next."></a>Enter the Product Name and click Next.</h2><p><img src="https://i.imgur.com/ZjBpiS0.png" alt="Imgur"></p>
-<p>Then you will see two files and ‘liboutputLog.a’ file that Xcode automatically generates for you .<br><img src="https://i.imgur.com/mazUcib.png" alt="Imgur"></p>
-<h1 id="Step2-Add-some-contents-and-build"><a href="#Step2-Add-some-contents-and-build" class="headerlink" title="Step2 Add some contents and build"></a>Step2 Add some contents and build</h1><h2 id="In-‘outpuLog-h’-file-add-a-new-method-‘printSomething’"><a href="#In-‘outpuLog-h’-file-add-a-new-method-‘printSomething’" class="headerlink" title="In ‘outpuLog.h’ file, add a new method ‘printSomething’;"></a>In ‘outpuLog.h’ file, add a new method ‘printSomething’;</h2><p><img src="https://i.imgur.com/3Z8ZRB4.png" alt="Imgur"></p>
-<h2 id="Then-implement-that-method-in-‘outputLog-m’-file"><a href="#Then-implement-that-method-in-‘outputLog-m’-file" class="headerlink" title="Then implement that method in ‘outputLog.m’ file."></a>Then implement that method in ‘outputLog.m’ file.</h2><p>This method will only print some tests in the cosole.<br><img src="https://i.imgur.com/yr1omix.png" alt="Imgur"></p>
-<h2 id="Choose-platform-Mac-real-device-or-Simulators-and-Click-the-build-button"><a href="#Choose-platform-Mac-real-device-or-Simulators-and-Click-the-build-button" class="headerlink" title="Choose platform (Mac, real device, or Simulators) and Click the build button."></a>Choose platform (Mac, real device, or Simulators) and Click the build button.</h2><p>I choose the Simulator, I can test the library later in a iPhone 8 Simulator.<br><img src="https://i.imgur.com/GKn9P4K.png" alt="Imgur"></p>
-<h2 id="After-building-you-can-find-the-‘liboutputLog-a’-file-in-Finder"><a href="#After-building-you-can-find-the-‘liboutputLog-a’-file-in-Finder" class="headerlink" title="After building, you can find the ‘liboutputLog.a’ file in Finder."></a>After building, you can find the ‘liboutputLog.a’ file in Finder.</h2><p><img src="https://i.imgur.com/DpNgMTG.png" alt="Imgur"></p>
-<h1 id="Step3-Add-the-static-library-to-a-pject"><a href="#Step3-Add-the-static-library-to-a-pject" class="headerlink" title="Step3 Add the static library to a pject."></a>Step3 Add the static library to a pject.</h1><p>Open you project, and prepare to add the ‘liboutputLog.a’ to project.</p>
-<h2 id="Find-this-two-file-a-head-file-and-a-file"><a href="#Find-this-two-file-a-head-file-and-a-file" class="headerlink" title="Find this two file: a head file and .a file."></a>Find this two file: a head file and .a file.</h2><p><img src="https://i.imgur.com/DqKTgWj.png" alt="Imgur"></p>
-<h2 id="Drag-these-2-files-to-your-project"><a href="#Drag-these-2-files-to-your-project" class="headerlink" title="Drag these 2 files to your project."></a>Drag these 2 files to your project.</h2><p><img src="https://i.imgur.com/oOR0fte.png" alt="Imgur"></p>
-<p>When you add these 2 files, remember to check 3 items:<br><img src="https://i.imgur.com/MjX0x5F.png" alt="Imgur"></p>
-<p>At this step, you’ve already create and add the ‘liboutputLog.a’ static library to your target project. </p>
-<h2 id="Next-use-the-method-in-static-library"><a href="#Next-use-the-method-in-static-library" class="headerlink" title="Next, use the method in static library."></a>Next, use the method in static library.</h2><p>Import the ‘outputLog.h’ in ViewController, and call the method when the view loads.<br><img src="https://i.imgur.com/deAmE5G.png" alt="Imgur"></p>
-<p>Choose Simulator as build target and Run, you’ll see some texts been printed out in cosole.<br>(If your static library’s build target is real device, then your project should test on a real device instead of simulator )<br><img src="https://i.imgur.com/TtRpx2t.png" alt="Imgur"></p>
-<p>All done !</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ziyochiro.github.io/2019/12/05/Creating-a-Mac-version-of-Your-iPhone-App/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ziyochiro">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ziyochiro's Blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/05/Creating-a-Mac-version-of-Your-iPhone-App/" itemprop="url">Creating a Mac version of Your iPhone App</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-05T17:36:40+08:00">
-                2019-12-05
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-05T17:36:40+08:00">
-                2019-12-05
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/objective-c/" itemprop="url" rel="index">
-                    <span itemprop="name">objective-c</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Link: <a href="https://developer.apple.com/mac-catalyst/" target="_blank" rel="noopener">mac-catalyst</a><br>Requirements:</p>
-<ul>
-<li>Xcode11 and later</li>
-<li>MacOS 10.15 and later</li>
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Ziyochiro
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://ziyochiro.github.io/2019/12/13/MacOS-development-Get-device-and-system-information/" title="MacOS development: Get device and system information">https://ziyochiro.github.io/2019/12/13/MacOS-development-Get-device-and-system-information/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
 </ul>
-<hr>
-<p>I have a simple iOS App that only have a viewController and a few buttons and lables on it. It looks like this:<br><img src="https://i.imgur.com/sb6CiIN.png" alt="Imgur"><br>If you want to create a Mac version of it without changing any code, you can do this by using Mac-Catalyst. It’s fast and simple.</p>
-<h1 id="Pre-Setting"><a href="#Pre-Setting" class="headerlink" title="Pre-Setting"></a>Pre-Setting</h1><h2 id="Step1"><a href="#Step1" class="headerlink" title="Step1"></a>Step1</h2><p>Check the Mac option in Target Device.<br><img src="https://i.imgur.com/6nhG5qq.png" alt="Imgur"></p>
-<h2 id="Step2"><a href="#Step2" class="headerlink" title="Step2"></a>Step2</h2><p>Normally, the code can just run on you Mac fine, but you might encounter this situation that you cannot run the code on you Mac because you have to add some Mac’s architecture in the Build Setting.<br><img src="https://i.imgur.com/6lT650T.png" alt="Imgur"><br>You can fix this by manually add ‘i386’ ‘x86_64’ to the Valid Architectures.<br><img src="https://i.imgur.com/ZF5fliq.png" alt="Imgur"></p>
-<h1 id="Window-settings"><a href="#Window-settings" class="headerlink" title="Window settings"></a>Window settings</h1><p>By default, you can change the window size, like many other Mac apps.<br><img src="https://i.imgur.com/2NBArN5.png" alt="Imgur"><br><img src="https://i.imgur.com/sTvhdkh.png" alt="Imgur"><br>Or you can fix the window size by adding the following code. Notice the difference between window and window scene.<br><img src="https://i.imgur.com/lwVLWaj.png" alt="Imgur"><br><code>TARGET_OS_MACCATALYST</code> allows you to exclude some code from Mac or iOS.</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">- (void)viewDidLoad &#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    <span class="keyword">self</span>.view.backgroundColor = [<span class="type">UIColor</span> whiteColor];</span><br><span class="line">    #<span class="keyword">if</span> !<span class="type">TARGET_OS_MACCATALYST</span></span><br><span class="line">        <span class="type">NSLog</span>(@“—codes only run on iPhone”);</span><br><span class="line">        <span class="comment">// code here</span></span><br><span class="line">    #endif</span><br><span class="line">    </span><br><span class="line">    #<span class="keyword">if</span> <span class="type">TARGET_OS_MACCATALYST</span></span><br><span class="line">        <span class="type">NSLog</span>(@“—codes only run on <span class="type">Mac</span>”);</span><br><span class="line">        <span class="comment">// code here</span></span><br><span class="line">    #endif</span><br><span class="line">    </span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"--run on both iPhone and Mac”);</span></span><br><span class="line"><span class="string">    // code here</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
 
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
+      </div>
     
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ziyochiro.github.io/2019/11/22/blogrules/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Ziyochiro">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ziyochiro's Blogs">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/22/blogrules/" itemprop="url">blogrules</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-22T17:32:40+08:00">
-                2019-11-22
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Post modified&#58;</span>
-              
-              <time title="Post modified" itemprop="dateModified" datetime="2019-11-22T17:32:40+08:00">
-                2019-11-22
-              </time>
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/tools/" itemprop="url" rel="index">
-                    <span itemprop="name">tools</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/macos/" rel="tag"># macos</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="插入图片测试"><a href="#插入图片测试" class="headerlink" title="插入图片测试"></a>插入图片测试</h3><p><img src="https://i.imgur.com/eqM6czF.png?2" alt="pets&#39;s food"></p>
-<p><img src="https://i.imgur.com/q15SsH7.png" alt="test"></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/06/How-to-build-a-static-library/" rel="next" title="How to build a static library">
+                <i class="fa fa-chevron-left"></i> How to build a static library
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -882,10 +429,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -893,6 +441,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -913,8 +465,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -974,6 +535,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Device-Model"><span class="nav-number">1.</span> <span class="nav-text">Device Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-Version"><span class="nav-number">2.</span> <span class="nav-text">System Version</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#System-Name"><span class="nav-number">3.</span> <span class="nav-text">System Name</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Share-Network-Name"><span class="nav-number">4.</span> <span class="nav-text">Share Network Name</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Serial-Number"><span class="nav-number">5.</span> <span class="nav-text">Serial Number</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UUID"><span class="nav-number">6.</span> <span class="nav-text">UUID</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1107,6 +684,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
