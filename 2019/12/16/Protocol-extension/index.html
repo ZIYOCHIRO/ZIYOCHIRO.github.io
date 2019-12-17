@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="static-library," />
+  <meta name="keywords" content="protocol," />
 
 
 
@@ -79,29 +79,16 @@
 
 
 
-<meta name="description" content="Step 1 Start with a new projectCreate a new project, choose iOS → Static Library → Next. Enter the Product Name and click Next. Then you will see two files and ‘liboutputLog.a’ file that Xcode automat">
-<meta name="keywords" content="static-library">
+<meta name="description" content="What is Protocol extensions?Extending a protocol means that you can offer default implementations to a protocol so that types don’t have to implement certain methods.Below, I will create a weapon prot">
+<meta name="keywords" content="protocol">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to build a static library">
-<meta property="og:url" content="https:&#x2F;&#x2F;ziyochiro.github.io&#x2F;2019&#x2F;12&#x2F;06&#x2F;How-to-build-a-static-library&#x2F;index.html">
+<meta property="og:title" content="Protocol extension">
+<meta property="og:url" content="https:&#x2F;&#x2F;ziyochiro.github.io&#x2F;2019&#x2F;12&#x2F;16&#x2F;Protocol-extension&#x2F;index.html">
 <meta property="og:site_name" content="Ziyochiro&#39;s Blogs">
-<meta property="og:description" content="Step 1 Start with a new projectCreate a new project, choose iOS → Static Library → Next. Enter the Product Name and click Next. Then you will see two files and ‘liboutputLog.a’ file that Xcode automat">
+<meta property="og:description" content="What is Protocol extensions?Extending a protocol means that you can offer default implementations to a protocol so that types don’t have to implement certain methods.Below, I will create a weapon prot">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;B3UINZj.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;ZjBpiS0.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;mazUcib.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;3Z8ZRB4.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;yr1omix.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;GKn9P4K.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;DpNgMTG.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;DqKTgWj.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;oOR0fte.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;MjX0x5F.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;deAmE5G.png">
-<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;TtRpx2t.png">
-<meta property="og:updated_time" content="2019-12-06T10:29:48.000Z">
+<meta property="og:updated_time" content="2019-12-16T06:07:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;B3UINZj.png">
 
 
 
@@ -131,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="https://ziyochiro.github.io/2019/12/06/How-to-build-a-static-library/"/>
+  <link rel="canonical" href="https://ziyochiro.github.io/2019/12/16/Protocol-extension/"/>
 
 
 
 
 
-  <title>How to build a static library | Ziyochiro's Blogs</title>
+  <title>Protocol extension | Ziyochiro's Blogs</title>
   
 
 
@@ -256,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://ziyochiro.github.io/2019/12/06/How-to-build-a-static-library/">
+    <link itemprop="mainEntityOfPage" href="https://ziyochiro.github.io/2019/12/16/Protocol-extension/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ziyochiro">
@@ -273,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">How to build a static library</h1>
+          <h1 class="post-title" itemprop="name headline">Protocol extension</h1>
         
 
         <div class="post-meta">
@@ -285,8 +272,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-06T18:29:48+08:00">
-                2019-12-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-16T14:07:45+08:00">
+                2019-12-16
               </time>
             
 
@@ -301,8 +288,8 @@
               
                 <span class="post-meta-item-text">Post modified&#58;</span>
               
-              <time title="Post modified" itemprop="dateModified" datetime="2019-12-06T18:29:48+08:00">
-                2019-12-06
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-16T14:07:45+08:00">
+                2019-12-16
               </time>
             
           </span>
@@ -320,8 +307,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/objective-c/" itemprop="url" rel="index">
-                    <span itemprop="name">objective-c</span>
+                  <a href="/categories/swift/" itemprop="url" rel="index">
+                    <span itemprop="name">swift</span>
                   </a>
                 </span>
 
@@ -357,21 +344,20 @@
       
 
       
-        <h3 id="Step-1-Start-with-a-new-project"><a href="#Step-1-Start-with-a-new-project" class="headerlink" title="Step 1 Start with a new project"></a>Step 1 Start with a new project</h3><h4 id="Create-a-new-project-choose-iOS-→-Static-Library-→-Next"><a href="#Create-a-new-project-choose-iOS-→-Static-Library-→-Next" class="headerlink" title="Create a new project, choose iOS → Static Library → Next."></a>Create a new project, choose iOS → Static Library → Next.</h4><p><img src="https://i.imgur.com/B3UINZj.png" alt="Imgur"></p>
-<h4 id="Enter-the-Product-Name-and-click-Next"><a href="#Enter-the-Product-Name-and-click-Next" class="headerlink" title="Enter the Product Name and click Next."></a>Enter the Product Name and click Next.</h4><p><img src="https://i.imgur.com/ZjBpiS0.png" alt="Imgur"></p>
-<p>Then you will see two files and ‘liboutputLog.a’ file that Xcode automatically generates for you .<br><img src="https://i.imgur.com/mazUcib.png" alt="Imgur"></p>
-<h3 id="Step2-Add-some-contents-and-build"><a href="#Step2-Add-some-contents-and-build" class="headerlink" title="Step2 Add some contents and build"></a>Step2 Add some contents and build</h3><h4 id="In-‘outpuLog-h’-file-add-a-new-method-‘printSomething’"><a href="#In-‘outpuLog-h’-file-add-a-new-method-‘printSomething’" class="headerlink" title="In ‘outpuLog.h’ file, add a new method ‘printSomething’;"></a>In ‘outpuLog.h’ file, add a new method ‘printSomething’;</h4><p><img src="https://i.imgur.com/3Z8ZRB4.png" alt="Imgur"></p>
-<h4 id="Then-implement-that-method-in-‘outputLog-m’-file"><a href="#Then-implement-that-method-in-‘outputLog-m’-file" class="headerlink" title="Then implement that method in ‘outputLog.m’ file."></a>Then implement that method in ‘outputLog.m’ file.</h4><p>This method will only print some tests in the cosole.<br><img src="https://i.imgur.com/yr1omix.png" alt="Imgur"></p>
-<h4 id="Choose-platform-Mac-real-device-or-Simulators-and-Click-the-build-button"><a href="#Choose-platform-Mac-real-device-or-Simulators-and-Click-the-build-button" class="headerlink" title="Choose platform (Mac, real device, or Simulators) and Click the build button."></a>Choose platform (Mac, real device, or Simulators) and Click the build button.</h4><p>I choose the Simulator, I can test the library later in a iPhone 8 Simulator.<br><img src="https://i.imgur.com/GKn9P4K.png" alt="Imgur"></p>
-<h4 id="After-building-you-can-find-the-‘liboutputLog-a’-file-in-Finder"><a href="#After-building-you-can-find-the-‘liboutputLog-a’-file-in-Finder" class="headerlink" title="After building, you can find the ‘liboutputLog.a’ file in Finder."></a>After building, you can find the ‘liboutputLog.a’ file in Finder.</h4><p><img src="https://i.imgur.com/DpNgMTG.png" alt="Imgur"></p>
-<h3 id="Step3-Add-the-static-library-to-a-pject"><a href="#Step3-Add-the-static-library-to-a-pject" class="headerlink" title="Step3 Add the static library to a pject."></a>Step3 Add the static library to a pject.</h3><p>Open you project, and prepare to add the ‘liboutputLog.a’ to project.</p>
-<h4 id="Find-this-two-file-a-head-file-and-a-file"><a href="#Find-this-two-file-a-head-file-and-a-file" class="headerlink" title="Find this two file: a head file and .a file."></a>Find this two file: a head file and .a file.</h4><p><img src="https://i.imgur.com/DqKTgWj.png" alt="Imgur"></p>
-<h4 id="Drag-these-2-files-to-your-project"><a href="#Drag-these-2-files-to-your-project" class="headerlink" title="Drag these 2 files to your project."></a>Drag these 2 files to your project.</h4><p><img src="https://i.imgur.com/oOR0fte.png" alt="Imgur"></p>
-<p>When you add these 2 files, remember to check 3 items:<br><img src="https://i.imgur.com/MjX0x5F.png" alt="Imgur"></p>
-<p>At this step, you’ve already create and add the ‘liboutputLog.a’ static library to your target project. </p>
-<h4 id="Next-use-the-method-in-static-library"><a href="#Next-use-the-method-in-static-library" class="headerlink" title="Next, use the method in static library."></a>Next, use the method in static library.</h4><p>Import the ‘outputLog.h’ in ViewController, and call the method when the view loads.<br><img src="https://i.imgur.com/deAmE5G.png" alt="Imgur"></p>
-<p>Choose Simulator as build target and Run, you’ll see some texts been printed out in cosole.<br>(If your static library’s build target is real device, then your project should test on a real device instead of simulator )<br><img src="https://i.imgur.com/TtRpx2t.png" alt="Imgur"></p>
-<p>All done !</p>
+        <h3 id="What-is-Protocol-extensions"><a href="#What-is-Protocol-extensions" class="headerlink" title="What is Protocol extensions?"></a>What is Protocol extensions?</h3><p>Extending a protocol means that you can offer default implementations to a protocol so that types don’t have to implement certain methods.<br>Below, I will create a weapon protocol, NOT class.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Weapon</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> canFire: <span class="type">Bool</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> cunCut: <span class="type">Bool</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Then, consider we have 2 types of weapons: fireable, cuttable. We will use these abilities with weapon protocol to create weapons as we want.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Fireable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bulletSize: <span class="type">Int</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Cuttable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> weight: <span class="type">Double</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> steel: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We created abilities and our Weapon protocol. Lets create structs using all these.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// longSword is a weapon with ability to cut.</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LongSword</span>: <span class="title">Weapon</span>, <span class="title">Cuttable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> steel: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> weight = <span class="number">7.2</span></span><br><span class="line">    <span class="keyword">let</span> canFire = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">let</span> canCut = <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// M416 is a weapon with ability to fire bullets.</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">M416</span>: <span class="title">Weapon</span>, <span class="title">Fireable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name = <span class="string">"M416"</span></span><br><span class="line">    <span class="keyword">let</span> bulletSize = <span class="number">5.56</span></span><br><span class="line">    <span class="keyword">let</span> canFire = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">let</span> canCut = <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p> <strong>var or let</strong><br>Whenever you declare properties on a protocol, they are always a var. The implementer can then choose to make it a let or var property. Also, if the protocol has a get set modifier on a property, the implementer has to offer a var to allow for mutation.</p>
+</blockquote>
+<p>As you can see above, we decorated our structs using protocols. Protocols force us to conform to them and also we add the ability we want. But a problem occurred above which is about holding canFire and canCut abilities at our custom structs. What can we do to fixt this? Answer is <strong>Protocol Extension :]</strong></p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Weapon</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> canFire: <span class="type">Bool</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> <span class="keyword">is</span> <span class="type">Fireable</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> canCut: <span class="type">Bool</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> <span class="keyword">is</span> <span class="type">Cuttable</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Then, remove all canFire and canCut variables from Weapon Protocol, Longsword, and M416. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> longClaw = <span class="type">LongSword</span>(name: <span class="string">"Longclaw"</span>, steel: <span class="string">"Valyrian"</span>)</span><br><span class="line">longclaw.canCut <span class="comment">// true</span></span><br><span class="line">longclaw.canFrie <span class="comment">// false</span></span><br><span class="line">longclaw.name</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> m416 = <span class="type">M416</span>()</span><br><span class="line">m416.canFire <span class="comment">// true</span></span><br><span class="line">m416.canCut <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>A default implementation on a protocol is always added via an extension.</p>
 
       
     </div>
@@ -392,7 +378,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://ziyochiro.github.io/2019/12/06/How-to-build-a-static-library/" title="How to build a static library">https://ziyochiro.github.io/2019/12/06/How-to-build-a-static-library/</a>
+    <a href="https://ziyochiro.github.io/2019/12/16/Protocol-extension/" title="Protocol extension">https://ziyochiro.github.io/2019/12/16/Protocol-extension/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -407,7 +393,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/static-library/" rel="tag"># static-library</a>
+            <a href="/tags/protocol/" rel="tag"># protocol</a>
           
         </div>
       
@@ -420,8 +406,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/05/Creating-a-Mac-version-of-Your-iPhone-App/" rel="next" title="Creating a Mac version of Your iPhone App">
-                <i class="fa fa-chevron-left"></i> Creating a Mac version of Your iPhone App
+              <a href="/2019/12/16/Toast-for-MacOS-App/" rel="next" title="Toast for MacOS App">
+                <i class="fa fa-chevron-left"></i> Toast for MacOS App
               </a>
             
           </div>
@@ -429,10 +415,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/13/MacOS-development-Get-device-and-system-information/" rel="prev" title="MacOS development: Get device and system information">
-                MacOS development: Get device and system information <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -564,7 +546,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Step-1-Start-with-a-new-project"><span class="nav-number">1.</span> <span class="nav-text">Step 1 Start with a new project</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Create-a-new-project-choose-iOS-→-Static-Library-→-Next"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new project, choose iOS → Static Library → Next.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Enter-the-Product-Name-and-click-Next"><span class="nav-number">1.2.</span> <span class="nav-text">Enter the Product Name and click Next.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step2-Add-some-contents-and-build"><span class="nav-number">2.</span> <span class="nav-text">Step2 Add some contents and build</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#In-‘outpuLog-h’-file-add-a-new-method-‘printSomething’"><span class="nav-number">2.1.</span> <span class="nav-text">In ‘outpuLog.h’ file, add a new method ‘printSomething’;</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Then-implement-that-method-in-‘outputLog-m’-file"><span class="nav-number">2.2.</span> <span class="nav-text">Then implement that method in ‘outputLog.m’ file.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Choose-platform-Mac-real-device-or-Simulators-and-Click-the-build-button"><span class="nav-number">2.3.</span> <span class="nav-text">Choose platform (Mac, real device, or Simulators) and Click the build button.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#After-building-you-can-find-the-‘liboutputLog-a’-file-in-Finder"><span class="nav-number">2.4.</span> <span class="nav-text">After building, you can find the ‘liboutputLog.a’ file in Finder.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Step3-Add-the-static-library-to-a-pject"><span class="nav-number">3.</span> <span class="nav-text">Step3 Add the static library to a pject.</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-this-two-file-a-head-file-and-a-file"><span class="nav-number">3.1.</span> <span class="nav-text">Find this two file: a head file and .a file.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Drag-these-2-files-to-your-project"><span class="nav-number">3.2.</span> <span class="nav-text">Drag these 2 files to your project.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Next-use-the-method-in-static-library"><span class="nav-number">3.3.</span> <span class="nav-text">Next, use the method in static library.</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-Protocol-extensions"><span class="nav-number">1.</span> <span class="nav-text">What is Protocol extensions?</span></a></li></ol></div>
             
 
           </div>
