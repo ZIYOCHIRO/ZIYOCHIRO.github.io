@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/32icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/16icon.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="design-pattern," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Types of design patterns  Structual design pattern: Describes how objects are composed and combined to form large structrues. —[Model-View-Controller(MVC), Model-View-View-Model(MVVM), Facade] Behavi">
+<meta name="keywords" content="design-pattern">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Design Patterns All in One">
+<meta property="og:url" content="https:&#x2F;&#x2F;ziyochiro.github.io&#x2F;2019&#x2F;12&#x2F;21&#x2F;Design-Patterns-All-in-One&#x2F;index.html">
+<meta property="og:site_name" content="Ziyochiro&#39;s Blogs">
+<meta property="og:description" content="Types of design patterns  Structual design pattern: Describes how objects are composed and combined to form large structrues. —[Model-View-Controller(MVC), Model-View-View-Model(MVVM), Facade] Behavi">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;FSDs6sd.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;m32zkta.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;IapBqzk.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;og9fUm9.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;FbQ1R9S.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;IapBqzk.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;Quf8aUU.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;1iqGxoo.png">
+<meta property="og:updated_time" content="2019-12-21T01:14:07.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;i.imgur.com&#x2F;FSDs6sd.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://ziyochiro.github.io/2019/12/21/Design-Patterns-All-in-One/"/>
+
+
+
+
+
+  <title>Design Patterns All in One | Ziyochiro's Blogs</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ziyochiro's Blogs</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Duck Duck go go go</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://ziyochiro.github.io/2019/12/21/Design-Patterns-All-in-One/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ziyochiro">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ziyochiro's Blogs">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Design Patterns All in One</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-12-21T09:14:07+08:00">
+                2019-12-21
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2019-12-21T09:14:07+08:00">
+                2019-12-21
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/swift/" itemprop="url" rel="index">
+                    <span itemprop="name">swift</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>Types of design patterns</p>
+<ul>
+<li>Structual design pattern: Describes how objects are composed and combined to form large structrues. —[Model-View-Controller(MVC), Model-View-View-Model(MVVM), Facade]</li>
+<li>Behavior design pattern: Describes how objects communicate with each other. —[Delegation, Observer, Strategy]</li>
+<li>Creational design pattern: Describes how to create or instantiate objects. [Builder, Singleton and Prototype]</li>
+</ul>
+</blockquote>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><p><img src="https://i.imgur.com/FSDs6sd.png" alt="Imgur"></p>
+<ul>
+<li><strong>Models</strong> hold application data. They are usually structs or simple classes.</li>
+<li><strong>Views</strong> display visual elements and controls on screen. They are usually subclasses of UIView.</li>
+<li><strong>Controllers</strong> coordinate between models and views. They are usually subclasses of UIViewController.</li>
+</ul>
+<p>Controllers are allowed to have strong properties for their model and view so they can be accessed directly. Conversely, models and views should not hold a strong reference to their owning controller. This would cause a retain cycle.</p>
+<hr>
+<h3 id="Delegation-Pattern"><a href="#Delegation-Pattern" class="headerlink" title="Delegation Pattern"></a>Delegation Pattern</h3><p>The delegation pattern enables an object to use another “helper” object to provide data or perform a task rather than do the task itself.<br><img src="https://i.imgur.com/m32zkta.png" alt="Imgur"></p>
+<ul>
+<li>An <strong>object</strong> needing a delegate, also known as the delegation object. It’s the object that has a delegate. The delegate is usually held as a weak property to avoid a retain cycle.</li>
+<li>A <strong>delegation protocol</strong>, which defines the methods a delegate may or should implement.</li>
+<li>A <strong>delegate</strong>, which is the helper object that implements the delegate protocol.</li>
+</ul>
+<p>Most often, delegate properties should be weak. If you find yourself tempted to create a strong delegate, anther design pattern may be better suited for your case, you might consider using the strategy pattern instead.</p>
+<hr>
+<h3 id="Strategy-Pattern"><a href="#Strategy-Pattern" class="headerlink" title="Strategy Pattern"></a>Strategy Pattern</h3><p>The strategy pattern defines a family of interchangeable objects that can be set or switched at runtime.<br><img src="https://i.imgur.com/IapBqzk.png" alt="Imgur"></p>
+<ul>
+<li>The <strong>object using a strategy</strong>. This most often a view controller when the pattern is used in iOS app development, but it can technically be any kind of object that needs interchangeable behavior.</li>
+<li>The <strong>strategy protocol</strong> defines methods that every strategy must implement.</li>
+<li>The <strong>strategies</strong> are objects that comform to the strategy protocol.</li>
+</ul>
+<p>Use the strategy pattern when you have two or more difficult behaviors that are interchangeable. This pattern is similar to the delegation pattern: both patterns rely on a protocol instead of concrete objects.<br>Delegations are often fixed at runtime. For example, the dataSource and delegate for a UITableVeiw can be set from Interface Builder, and it’s rare for these to change during runtime. Strategies, however, are intended to be easily interchangeable at runtime.<br> <strong>Eample</strong>:<br> <strong>strategy protocol</strong>–MovieRatingStrategy</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">protocol</span> <span class="title">MovieRatingStrategy</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1</span></span><br><span class="line">    <span class="keyword">var</span> ratingServiceName: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="comment">// 2</span></span><br><span class="line">    <span class="function"><span class="keyword">func</span> <span class="title">fetchRating</span><span class="params">(<span class="keyword">for</span> movieTitle: String, success: <span class="params">(<span class="number">_</span> rating: String, <span class="number">_</span> review: String)</span></span></span> -&gt; ())</span><br><span class="line">&#125;</span><br><span class="line">strategies—<span class="type">RottenTomatoesClient</span> &amp; <span class="type">IMDbClient</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RottenTomatoesClient</span>: <span class="title">MovieRatingStrategy</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> ratingServiceName = <span class="string">"Rotten Tomatoes"</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">fetchRating</span><span class="params">(<span class="keyword">for</span> movieTitle: String,success: <span class="params">(<span class="number">_</span> rating: String, <span class="number">_</span> review: String)</span></span></span> -&gt; ()) &#123;</span><br><span class="line">        <span class="keyword">let</span> rating = <span class="string">"95%"</span></span><br><span class="line">        <span class="keyword">let</span> review = <span class="string">"It rocked!"</span></span><br><span class="line">        success(rating, review)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IMDbClient</span>: <span class="title">MovieRatingStrategy</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> ratingServiceName = <span class="string">"IMDb"</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">fetchRating</span><span class="params">(<span class="keyword">for</span> movieTitle: String,success: <span class="params">(<span class="number">_</span> rating: String, <span class="number">_</span> review: String)</span></span></span> -&gt; ()) &#123;</span><br><span class="line">        <span class="keyword">let</span> rating = <span class="string">"3 / 10"</span></span><br><span class="line">        <span class="keyword">let</span> review = <span class="string">"It was terrible! The audience was throwing rotten tomatoes!"</span></span><br><span class="line">        success(rating, review)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>object using a strategy</strong>—MoviewRatingViewController</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MoviewRatingViewController</span>: <span class="title">UIViewController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> movieRatingClient: <span class="type">MovieRatingStrategy!</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">public</span> <span class="keyword">var</span> movieTitleTextField: <span class="type">UITextField!</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">public</span> <span class="keyword">var</span> ratingServiceNameLabel: <span class="type">UILabel!</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">public</span> <span class="keyword">var</span> ratingLabel: <span class="type">UILabel!</span></span><br><span class="line">    <span class="meta">@IBOutlet</span> <span class="keyword">public</span> <span class="keyword">var</span> reviewLabel: <span class="type">UILabel!</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">viewDidLoad</span><span class="params">()</span></span> &#123; </span><br><span class="line">        <span class="keyword">super</span>.viewDidLoad() </span><br><span class="line">        ratingServiceNameLabel.text = movieRatingClient.ratingServiceName </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@IBAction</span> <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">searchButtonPressed</span><span class="params">(sender: <span class="keyword">Any</span>)</span></span> &#123; </span><br><span class="line">        <span class="keyword">guard</span> <span class="keyword">let</span> movieTitle = movieTitleTextField.text <span class="keyword">else</span> &#123; <span class="keyword">return</span> &#125;</span><br><span class="line">        movieRatingClient.fetchRating(<span class="keyword">for</span>: movieTitle) &#123; (rating, review) <span class="keyword">in</span></span><br><span class="line">        <span class="keyword">self</span>.ratingLabel.text = rating <span class="keyword">self</span>.reviewLabel.text = review</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Whenever this view controller is instantiated within the app, you’d need to set the movieRatingClient. Notice how the view contorller doesn’t know about the concrete implementations of <code>MovieRatingStrategy</code>. The determination of which <code>MovieRatingStrategy</code> to use can be deferred unitl runtime.</p>
+<hr>
+<h3 id="Singleton-Pattern"><a href="#Singleton-Pattern" class="headerlink" title="Singleton Pattern"></a>Singleton Pattern</h3><p>The singleton pattern restricts a class to only one instance. Every reference to the class refers to the same underlying instance.<br><img src="https://i.imgur.com/og9fUm9.png" alt="Imgur"></p>
+<p>Use the singleton pattern when having more than one instance of a class would cause problems, or when it just wouldn’t be logical.<br>The “singleton plus” pattern is also common, which provides a shared singleton instance that allows other instances to be created, too.<br>Use the singleton plus pattern if a shared instance is useful most of the time, but you also want to allow custom instances to be created. An example of this is FileManager. There is a “default” instance which is a singleton, or you can create your own. You would usually create your own if you’re using it on a background thread.<br><strong>Example</strong>:<br><strong>Singleton</strong>:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> UIKit </span><br><span class="line"> <span class="keyword">let</span> app = <span class="type">UIApplication</span>.shared</span><br><span class="line"> <span class="comment">// let app2 = UIApplication() </span></span><br><span class="line"> <span class="comment">// Error: You'll get a compiler error! UIApplication doesn't allow more than one instance to be created.</span></span><br><span class="line"></span><br><span class="line"> <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingleton</span> </span>&#123;</span><br><span class="line">     <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">MySingleton</span>()</span><br><span class="line">     <span class="keyword">private</span> <span class="keyword">init</span>() &#123;&#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">let</span> mySingleton = <span class="type">MySingleton</span>.shared</span><br><span class="line"><span class="comment">// let mySingleton2 = MySingleton()</span></span><br><span class="line"><span class="comment">// Error: You'll get a compiler error if you try to create additional instances of MySingleton</span></span><br></pre></td></tr></table></figure>
+<p><strong>Singleton Plus</strong>:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> defaultFileManager = <span class="type">FileManager</span>.<span class="keyword">default</span></span><br><span class="line"><span class="keyword">let</span> customFileManager = <span class="type">FileManager</span>()</span><br><span class="line"><span class="comment">// You're allowed to create new instance of FileManger. This proves that it's using the singleton plus pattern!</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySingletonPlus</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">let</span> shared = <span class="type">MySingletonPlus</span>()</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">init</span>() &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> singletonPlus = <span class="type">MySingletonPlus</span>.shared</span><br><span class="line"><span class="keyword">let</span> singletonPlus2 = <span class="type">MySingletonPlus</span>()</span><br></pre></td></tr></table></figure>
+<p>Singleton Plus is very similar to a true Singleton:</p>
+<ol>
+<li>You declare a shared static property just like a singleton. </li>
+<li>Unlike a true singleton, you declare init as public to allow additional instances to be created.</li>
+<li>You get the sinleton instance by calling MySingletonPlus.shared.</li>
+<li>You can also create new intances, too.</li>
+</ol>
+<p>Be careful about overusing this pattern! Before you create a singleton, consider other ways to solve the problem without it. If a singleton really is best, prefer to use a singleton plus over a singleton.</p>
+<hr>
+<h3 id="Observer-Pattern"><a href="#Observer-Pattern" class="headerlink" title="Observer Pattern"></a>Observer Pattern</h3><p>The observer pattern lets one object observe changes on another object. You’ll learn two different ways to implement the observer pattern in this chapter: Using key value observation(KVO), and using an Observation wrapper.<br><img src="https://i.imgur.com/FbQ1R9S.png" alt="Imgur"></p>
+<ol>
+<li>The <strong>subject</strong> is the object that’s being observed.</li>
+<li>The <strong>observer</strong> is the object doing the observing.</li>
+</ol>
+<p>Use the observer pattern whenever you want to receive changes made on another object.<br>The pattern if often used with MVC, where the view controller is the observer and the model is the subject. This allows the model to communicate changes back to the view controller without needing to know anything about the view controlelr’s type. Thereby, different view controllers can use and observer changes on a shared model type.</p>
+<h3 id="Builder-Pattern"><a href="#Builder-Pattern" class="headerlink" title="Builder Pattern"></a>Builder Pattern</h3><p>The builder pattern allows you to create complex objects by providing inputs step-by-step, instead of requiring all inputs unfront via an initializer.<br><img src="https://i.imgur.com/IapBqzk.png" alt="Imgur"></p>
+<ol>
+<li>The <strong>director</strong> accepts inputs and coordinates with the builder. This is usually a view controller or a helper class that’s used by a view controller.</li>
+<li>The <strong>product</strong> is the complex object to be created. This can be either a struct or a class, depending on desired references semantics. It’s usually a model, but it can be any type depending on your use case.</li>
+<li>The <strong>builder</strong> accepts step-by-step inputs and handles the creation of the product. This is often a class, so it can be reused by reference.</li>
+</ol>
+<p>The builder pattern works best for creating complex products that require multiple inputs using a series of steps. If your product doesn’t have several inputs or can’t be created step by step, the builder pattern may be more trouble than it’s worth.<br>Instead, consider providing convenience initializers to create the product.</p>
+<hr>
+<h3 id="Model-View-ViewModel-Pattern"><a href="#Model-View-ViewModel-Pattern" class="headerlink" title="Model-View-ViewModel Pattern"></a>Model-View-ViewModel Pattern</h3><p><img src="https://i.imgur.com/Quf8aUU.png" alt="Imgur"></p>
+<ul>
+<li><strong>Models</strong> hold app data. They’are usually structs or simple classes.</li>
+<li><strong>Views</strong> display visual elements and controls on the screen. They’re typically subclasses of UIView</li>
+<li><strong>View models</strong> transform model information into values that can be displayes on a view. They’re usually classes, so they can be passed around as references.</li>
+</ul>
+<p>It’s very similar to MVC. Note that the class diagram at the top of this page includes a view controller; view controller do exist in MVVM, but their role is minimized.<br>Use this pattern when you need to transform models into another representation for a view. For example, you can use a view model to transform a Date into a date-formatted String, a Decimal into a currency-formatted String, or many other useful transformations.<br>This pattern complements MVC especially well. Without view models, you’d likely put model-to-view transformation code in your view controller. However, view controllers are already doing quite a bit: handling viewDidLoad and other view lifecycle events, handling view callbacks via IBActions and several other tasks as well.</p>
+<hr>
+<h3 id="Factory-Pattern"><a href="#Factory-Pattern" class="headerlink" title="Factory Pattern"></a>Factory Pattern</h3><p>The factory pattern is a creational pattern that provides a way to make objects without exposing creation logic.<br><img src="https://i.imgur.com/1iqGxoo.png" alt="Imgur"></p>
+<ol>
+<li>The factory creates objects.</li>
+<li>The products are the objects that are created.</li>
+</ol>
+<p>Technically, there are multiple “flavors” of this pattern, including simple factory, abstrat factory and others. However, each of these share a common goal: to isolate object creation logic within its own construct.<br>Use the factory pattern whenever you want to separate out product creation logic, instead of having consumers create products directly.<br>Example: You’ll create a factory to generate job response emails.</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Foundation</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">JobApplicant</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> email: <span class="type">String</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">var</span> status: <span class="type">Status</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Status</span> </span>&#123;</span><br><span class="line">        <span class="keyword">case</span> new</span><br><span class="line">        <span class="keyword">case</span> interview</span><br><span class="line">        <span class="keyword">case</span> hired</span><br><span class="line">        <span class="keyword">case</span> rejected</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">Email</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> subject: <span class="type">String</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> messageBody: <span class="type">String</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> recipientEmail: <span class="type">String</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> senderEmail: <span class="type">String</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Here, you’ve defined JopApplicant and Email models. An applicant has a name, email, and four types of status. </p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">struct</span> <span class="title">EmailFactory</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">let</span> senderEmail: <span class="type">String</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">func</span> <span class="title">createEmail</span><span class="params">(to recipient: JobApplication)</span></span> -&gt; <span class="type">Email</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> subject: <span class="type">String</span></span><br><span class="line">        <span class="keyword">let</span> messageBody: <span class="type">String</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">switch</span> recipient.status &#123;</span><br><span class="line">        <span class="keyword">case</span> .new:</span><br><span class="line">            subject = <span class="string">"We received your application"</span></span><br><span class="line">            messageBody = <span class="string">"""</span></span><br><span class="line"><span class="string">            Thanks for applying for a job here!</span></span><br><span class="line"><span class="string">            You should hear from us in 17~42 business days.</span></span><br><span class="line"><span class="string">            """</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">case</span> .interview:</span><br><span class="line">            subject = <span class="string">"We want to interview you"</span></span><br><span class="line">            messageBody = <span class="string">"""</span></span><br><span class="line"><span class="string">            Thanks for your resume, \(recipient.name)</span></span><br><span class="line"><span class="string">            Can you come in for an interview in 30 minutes?</span></span><br><span class="line"><span class="string">            """</span></span><br><span class="line">            </span><br><span class="line">        <span class="keyword">case</span> .hired:</span><br><span class="line">            subject = <span class="string">"We want to hire you"</span></span><br><span class="line">            messageBody = <span class="string">"""</span></span><br><span class="line"><span class="string">            Congratulations, \(recipient.name)</span></span><br><span class="line"><span class="string">            We liked your code, and you smelled nice.</span></span><br><span class="line"><span class="string">            We want to offer you a position! Cha-ching!</span></span><br><span class="line"><span class="string">            """</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">case</span> .rejected:</span><br><span class="line">            subject = <span class="string">"Thanks for your application"</span></span><br><span class="line">            messageBody = <span class="string">"""</span></span><br><span class="line"><span class="string">            Thank you for applying, \(recipient.name)</span></span><br><span class="line"><span class="string">            We have decided to move forword with other candidates.</span></span><br><span class="line"><span class="string">            Please remember to wear pants next time!</span></span><br><span class="line"><span class="string">            """</span></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="type">Email</span>(subject: subject, messageBody: messageBody, recipientEmail: recipient.email, senderEmail: senderEmail)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Now the email templates have been constructed, it’s time to use your factory on a prospective applicant!</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> jackson = <span class="type">JobApplication</span>(name: <span class="string">"Jackson Smith"</span>, email: <span class="string">"jackSmith@gmail.com"</span>, status: .new)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> emailFactory = <span class="type">EmailFactory</span>(senderEmail: <span class="string">"RaysMinions@RasysCoffeeCo.com"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// New</span></span><br><span class="line"><span class="built_in">print</span>(emailFactory.createEmail(to: jackson))</span><br><span class="line"></span><br><span class="line"><span class="comment">// Interview</span></span><br><span class="line">jackson.status = .interview</span><br><span class="line"><span class="built_in">print</span>(emailFactory.createEmail(to: jackson))</span><br></pre></td></tr></table></figure>
+<p>Here, you’re creating a new <code>JobApplicant</code> named “Jackson Smith”. Next, you create a new <code>EmailFactory</code> instance, and finally, you use the instance to genenrate emails based on the JobApplicant object status property.</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Ziyochiro
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://ziyochiro.github.io/2019/12/21/Design-Patterns-All-in-One/" title="Design Patterns All in One">https://ziyochiro.github.io/2019/12/21/Design-Patterns-All-in-One/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/design-pattern/" rel="tag"># design-pattern</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/16/Protocol-extension/" rel="next" title="Protocol extension">
+                <i class="fa fa-chevron-left"></i> Protocol extension
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Ziyochiro</p>
+              <p class="site-description motion-element" itemprop="description">My blogs</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC"><span class="nav-number">1.</span> <span class="nav-text">MVC</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Delegation-Pattern"><span class="nav-number">2.</span> <span class="nav-text">Delegation Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strategy-Pattern"><span class="nav-number">3.</span> <span class="nav-text">Strategy Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Singleton-Pattern"><span class="nav-number">4.</span> <span class="nav-text">Singleton Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Observer-Pattern"><span class="nav-number">5.</span> <span class="nav-text">Observer Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Builder-Pattern"><span class="nav-number">6.</span> <span class="nav-text">Builder Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model-View-ViewModel-Pattern"><span class="nav-number">7.</span> <span class="nav-text">Model-View-ViewModel Pattern</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Factory-Pattern"><span class="nav-number">8.</span> <span class="nav-text">Factory Pattern</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ziyochiro</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

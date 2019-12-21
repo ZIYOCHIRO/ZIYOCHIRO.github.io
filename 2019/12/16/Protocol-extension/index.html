@@ -363,18 +363,18 @@
       
 
       
-        <h3 id="What-is-Protocol-extensions"><a href="#What-is-Protocol-extensions" class="headerlink" title="What is Protocol extensions?"></a>What is Protocol extensions?</h3><p>Extending a protocol means that you can offer default implementations to a protocol so that types don’t have to implement certain methods.<br>Below, I will create a weapon protocol, NOT class.</p>
+        <h3 id="What-is-Protocol-extensions"><a href="#What-is-Protocol-extensions" class="headerlink" title="What is Protocol extensions?"></a>What is Protocol extensions?</h3><p>Extending a protocol means that you can offer default implementations to a protocol so that types don’t have to implement certain methods.<br>Below, I will create a weapon protocol, <strong>NOT</strong> class.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Weapon</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> name: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> canFire: <span class="type">Bool</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> cunCut: <span class="type">Bool</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Then, consider we have 2 types of weapons: fireable, cuttable. We will use these abilities with weapon protocol to create weapons as we want.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Fireable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> bulletSize: <span class="type">Int</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">protocol</span> <span class="title">Cuttable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> weight: <span class="type">Double</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> steel: <span class="type">String</span> &#123; <span class="keyword">get</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>We created abilities and our Weapon protocol. Lets create structs using all these.</p>
+<p>We created abilities and our Weapon protocol. Let’s create structs using all these.</p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// longSword is a weapon with ability to cut.</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">LongSword</span>: <span class="title">Weapon</span>, <span class="title">Cuttable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> steel: <span class="type">String</span></span><br><span class="line">    <span class="keyword">let</span> weight = <span class="number">7.2</span></span><br><span class="line">    <span class="keyword">let</span> canFire = <span class="literal">false</span></span><br><span class="line">    <span class="keyword">let</span> canCut = <span class="literal">true</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// M416 is a weapon with ability to fire bullets.</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">M416</span>: <span class="title">Weapon</span>, <span class="title">Fireable</span> </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> name = <span class="string">"M416"</span></span><br><span class="line">    <span class="keyword">let</span> bulletSize = <span class="number">5.56</span></span><br><span class="line">    <span class="keyword">let</span> canFire = <span class="literal">true</span></span><br><span class="line">    <span class="keyword">let</span> canCut = <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p> <strong>var or let</strong><br>Whenever you declare properties on a protocol, they are always a var. The implementer can then choose to make it a let or var property. Also, if the protocol has a get set modifier on a property, the implementer has to offer a var to allow for mutation.</p>
+<p> <strong>var or let</strong><br>Whenever you declare properties on a protocol, they are always a var. The implementer can then choose to make it a <code>let</code> or <code>var</code> property. Also, if the protocol has a <code>get</code> <code>set</code> modifier on a property, the implementer has to offer a <code>var</code> to allow for mutation.</p>
 </blockquote>
-<p>As you can see above, we decorated our structs using protocols. Protocols force us to conform to them and also we add the ability we want. But a problem occurred above which is about holding canFire and canCut abilities at our custom structs. What can we do to fixt this? Answer is <strong>Protocol Extension :]</strong></p>
+<p>As you can see above, we decorated our structs using protocols. Protocols force us to conform to them and also we add the ability we want. But a problem occurred above which is about holding <code>canFire</code> and <code>canCut</code> abilities at our custom structs. What can we do to fixt this? Answer is <strong>Protocol Extension :]</strong></p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">extension</span> <span class="title">Weapon</span> </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> canFire: <span class="type">Bool</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> <span class="keyword">is</span> <span class="type">Fireable</span> &#125;</span><br><span class="line">    <span class="keyword">var</span> canCut: <span class="type">Bool</span> &#123; <span class="keyword">return</span> <span class="keyword">self</span> <span class="keyword">is</span> <span class="type">Cuttable</span> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Then, remove all canFire and canCut variables from Weapon Protocol, Longsword, and M416. </p>
+<p>Then, remove all <code>canFire</code> and <code>canCut</code> variables from <code>Weapon Protocol</code>, <code>Longsword</code>, and <code>M416</code>. </p>
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> longClaw = <span class="type">LongSword</span>(name: <span class="string">"Longclaw"</span>, steel: <span class="string">"Valyrian"</span>)</span><br><span class="line">longclaw.canCut <span class="comment">// true</span></span><br><span class="line">longclaw.canFrie <span class="comment">// false</span></span><br><span class="line">longclaw.name</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> m416 = <span class="type">M416</span>()</span><br><span class="line">m416.canFire <span class="comment">// true</span></span><br><span class="line">m416.canCut <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
 <p>A default implementation on a protocol is always added via an extension.</p>
 
@@ -434,6 +434,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/21/Design-Patterns-All-in-One/" rel="prev" title="Design Patterns All in One">
+                Design Patterns All in One <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -510,7 +514,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -532,7 +536,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
